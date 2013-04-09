@@ -89,16 +89,11 @@ class GSTStack:
         self._out_pipeline.add(video_rtp_theora_pay)
         video_enc.link(video_rtp_theora_pay)
 
-        #Add rtpbin
-        video_rtp_bin = gst.element_factory_make("gstrtpbin", "rtpbin")
-        self._out_pipeline.add(video_rtp_bin)
-        video_rtp_theora_pay.link(video_rtp_bin)
-
         # Add udpsink
         udp_sink = gst.element_factory_make("udpsink")
         udp_sink.set_property("host", ip)
         self._out_pipeline.add(udp_sink)
-        video_rtp_bin.link(udp_sink)
+        video_enc.link(udp_sink)
 
         
 
@@ -165,16 +160,11 @@ class GSTStack:
         # Video Source
         video_src = gst.element_factory_make("udpsrc")
         self._in_pipeline.add(video_src)
-        
-        # RTP Bin
-        video_rtp_bin = gst.element_factory_make("gstrtpbin", "rtpbin")
-        self._in_pipeline.add(video_rtp_bin)
-        video_src.link(video_rtp_bin)
 
         # RTP Theora Depay
         video_rtp_theora_depay = gst.element_factory_make("rtptheoradepay")
         self._in_pipeline.add(video_rtp_theora_depay)
-        video_rtp_bin.link(video_rtp_theora_depay)
+        video_src.link(video_rtp_theora_depay)
 
         # Video decode
         video_decode = gst.element_factory_make("theoradec")
