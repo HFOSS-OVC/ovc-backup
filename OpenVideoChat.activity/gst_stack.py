@@ -25,14 +25,11 @@
 .. moduleauthor:: Caleb Coffie <CalebCoffie@gmail.com>
 """
 
-print "Before gst import"
-
 #External Imports
-import gst
+import pygst
 
 #Internal Imports
 
-print "After gst import"
 
 #Define the limitations of the device
 CAPS = "video/x-raw-yuv,width=320,height=240,framerate=15/1"
