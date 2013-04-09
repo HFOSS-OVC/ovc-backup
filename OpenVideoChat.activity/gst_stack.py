@@ -157,7 +157,7 @@ class GSTStack:
         self._in_pipeline = gst.Pipeline()
 
         # Video Source
-        video_src = gst.element_factory_make("rtpsrc")
+        video_src = gst.element_factory_make("udpsrc")
         self._in_pipeline.add(video_src)
 
         # RTP Theora Depay
