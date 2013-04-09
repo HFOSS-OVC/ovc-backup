@@ -55,42 +55,42 @@ class GSTStack:
         # v4l2src -> videorate -> (CAPS) -> tee -> theoraenc -> rtptheorapay -> udpsink
         #                                     \
         #                     -> queue -> ffmpegcolorspace -> ximagesink
-        self._out_pipeline = gst.Pipeline()
+        self._out_pipeline = pygst.Pipeline()
 
         # Video Source
-        video_src = gst.element_factory_make("v4l2src")
+        video_src = pygst.element_factory_make("v4l2src")
         self._out_pipeline.add(video_src)
 
         # Video Rate element to allow setting max framerate
-        video_rate = gst.element_factory_make("videorate")
+        video_rate = pygst.element_factory_make("videorate")
         self._out_pipeline.add(video_rate)
         video_src.link(video_rate)
 
         # Add caps to limit rate and size
-        video_caps = gst.element_factory_make("capsfilter")
-        video_caps.set_property("caps", gst.Caps(CAPS))
+        video_caps = pygst.element_factory_make("capsfilter")
+        video_caps.set_property("caps", pygst.Caps(CAPS))
         self._out_pipeline.add(video_caps)
         video_rate.link(video_caps)
 
         #Add tee element
-        video_tee = gst.element_factory_make("tee")
+        video_tee = pygst.element_factory_make("tee")
         self._out_pipeline.add(video_tee)
         video_caps.link(video_tee)
 
         # Add theora Encoder
-        video_enc = gst.element_factory_make("theoraenc")
+        video_enc = pygst.element_factory_make("theoraenc")
         video_enc.set_property("bitrate", 50)
         video_enc.set_property("speed-level", 2)
         self._out_pipeline.add(video_enc)
         video_tee.link(video_enc)
 
         #Add rtptheorapay
-        video_rtp_theora_pay = gst.element_factory_make("rtptheorapay")
+        video_rtp_theora_pay = pygst.element_factory_make("rtptheorapay")
         self._out_pipeline.add(video_rtp_theora_pay)
         video_enc.link(video_rtp_theora_pay)
 
         #Add udpsink
-        udp_sink = gst.element_factory_make("udpsink")
+        udp_sink = pygst.element_factory_make("udpsink")
         udp_sink.set_property("host", ip)
         self._out_pipeline.add(udp_sink)
         video_rtp_theora_pay.link(udp_sink)
@@ -98,17 +98,17 @@ class GSTStack:
 
         ## On other side of pipeline. connect tee to ximagesink
         # Queue element to receive video from tee
-        video_queue = gst.element_factory_make("queue")
+        video_queue = pygst.element_factory_make("queue")
         self._out_pipeline.add(video_queue)
         video_tee.link(video_queue)
 
         # Change colorspace for ximagesink
-        video_colorspace = gst.element_factory_make("ffmpegcolorspace")
+        video_colorspace = pygst.element_factory_make("ffmpegcolorspace")
         self._out_pipeline.add(video_colorspace)
         video_queue.link(video_colorspace)
 
         # Send to ximagesink
-        ximage_sink = gst.element_factory_make("ximagesink")
+        ximage_sink = pygst.element_factory_make("ximagesink")
         self._out_pipeline.add(ximage_sink)
         video_colorspace.link(ximage_sink)
 
@@ -123,12 +123,12 @@ class GSTStack:
             the pipeline.
             """
             t = message.type
-            if t == gst.MESSAGE_EOS:
-                self._out_pipeline.set_state(gst.STATE_NULL)
-            elif t == gst.MESSAGE_ERROR:
+            if t == pygst.MESSAGE_EOS:
+                self._out_pipeline.set_state(pygst.STATE_NULL)
+            elif t == pygst.MESSAGE_ERROR:
                 err, debug = message.parse_error()
                 print "Error: %s" % err, debug
-                self._out_pipeline.set_state(gst.STATE_NULL)
+                self._out_pipeline.set_state(pygst.STATE_NULL)
 
         def on_sync_message(bus, message):
             if message.structure is None:
@@ -154,29 +154,29 @@ class GSTStack:
 
         # Pipeline:
         # udpsrc -> rtptheoradepay -> theoradec -> ffmpegcolorspace -> xvimagesink
-        self._in_pipeline = gst.Pipeline()
+        self._in_pipeline = pygst.Pipeline()
 
         # Video Source
-        video_src = gst.element_factory_make("udpsrc")
+        video_src = pygst.element_factory_make("udpsrc")
         self._in_pipeline.add(video_src)
 
         # RTP Theora Depay
-        video_rtp_theora_depay = gst.element_factory_make("rtptheoradepay")
+        video_rtp_theora_depay = pygst.element_factory_make("rtptheoradepay")
         self._in_pipeline.add(video_rtp_theora_depay)
         video_src.link(video_rtp_theora_depay)
 
         # Video decode
-        video_decode = gst.element_factory_make("theoradec")
+        video_decode = pygst.element_factory_make("theoradec")
         self._in_pipeline.add(video_decode)
         video_rtp_theora_depay.link(video_decode)
 
         # Change colorspace for xvimagesink
-        video_colorspace = gst.element_factory_make("ffmpegcolorspace")
+        video_colorspace = pygst.element_factory_make("ffmpegcolorspace")
         self._in_pipeline.add(video_colorspace)
         video_decode.link(video_colorspace)
 
         # Send video to xviamgesink
-        xvimage_sink = gst.element_factory_make("xvimagesink")
+        xvimage_sink = pygst.element_factory_make("xvimagesink")
         xvimage_sink.set_property("force-aspect-ratio", True)
         self._in_pipeline.add(xvimage_sink)
         video_colorspace.link(xvimage_sink)
@@ -192,12 +192,12 @@ class GSTStack:
             the pipeline.
             """
             t = message.type
-            if t == gst.MESSAGE_EOS:
-                self._in_pipeline.set_state(gst.STATE_NULL)
-            elif t == gst.MESSAGE_ERROR:
+            if t == pygst.MESSAGE_EOS:
+                self._in_pipeline.set_state(pygst.STATE_NULL)
+            elif t == pygst.MESSAGE_ERROR:
                 err, debug = message.parse_error()
                 print "Error: %s" % err, debug
-                self._in_pipeline.set_state(gst.STATE_NULL)
+                self._in_pipeline.set_state(pygst.STATE_NULL)
 
         def on_sync_message(bus, message):
             if message.structure is None:
@@ -214,16 +214,16 @@ class GSTStack:
         if self._out_pipeline != None:
             if start:
                 print "Setting Outgoing Pipeline state: STATE_PLAYING"
-                self._out_pipeline.set_state(gst.STATE_PLAYING)
+                self._out_pipeline.set_state(pygst.STATE_PLAYING)
             else:
                 print "Setting Outgoing Pipeline state: STATE_NULL"
-                self._out_pipeline.set_state(gst.STATE_NULL)
+                self._out_pipeline.set_state(pygst.STATE_NULL)
 
     def start_stop_incoming_pipeline(self, start=True):
         if self._in_pipeline != None:
             if start:
                 print "Setting Incoming Pipeline state: STATE_PLAYING"
-                self._in_pipeline.set_state(gst.STATE_PLAYING)
+                self._in_pipeline.set_state(pygst.STATE_PLAYING)
             else:
                 print "Setting Incoming Pipeline state: STATE_NULL"
-                self._in_pipeline.set_state(gst.STATE_NULL)
+                self._in_pipeline.set_state(pygst.STATE_NULL)
