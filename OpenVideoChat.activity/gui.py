@@ -30,18 +30,18 @@ from sugar.activity.activity import ActivityToolbox
 from sugar.graphics.toolbutton import ToolButton
 
 
-class Gui (gtk.VBox):
+class Gui (pygtk.VBox):
 
     def __init__(self, activity):
 
-        gtk.VBox.__init__(self)
+        pygtk.VBox.__init__(self)
 
         self.activity = activity
 
-        mov_box = gtk.HBox()
+        mov_box = pygtk.HBox()
 
         #Add movie window
-        self.movie_window = gtk.DrawingArea()
+        self.movie_window = pygtk.DrawingArea()
         self.movie_window_preview = gtk.DrawingArea()
         mov_box.pack_start(self.movie_window)
         mov_box.pack_start(self.movie_window_preview)
