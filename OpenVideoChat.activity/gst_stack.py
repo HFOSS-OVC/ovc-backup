@@ -89,11 +89,11 @@ class GSTStack:
         self._out_pipeline.add(video_rtp_theora_pay)
         video_enc.link(video_rtp_theora_pay)
 
-        #Add rtpbin
-        video_rtp_bin = gst.element_factory_make("gstrtpbin", "rtpbin")
-        video_enc.set_property("host", ip)
-        self._out_pipeline.add(video_rtp_bin)
-        video_rtp_theora_pay.link(video_rtp_bin)
+        #Add udpsink
+        udp_sink = gst.element_factory_make("udpsink")
+        udp_sink.set_property("host", ip)
+        self._out_pipeline.add(udp_sink)
+        video_rtp_theora_pay.link(udp_sink)
 
 
         ## On other side of pipeline. connect tee to ximagesink
@@ -153,7 +153,7 @@ class GSTStack:
         print "Building Incoming Video Pipeline"
 
         # Pipeline:
-        # rtpsrc -> theoradec -> ffmpegcolorspace -> xvimagesink
+        # udpsrc -> theoradec -> ffmpegcolorspace -> xvimagesink
         self._in_pipeline = gst.Pipeline()
 
         # Video Source
