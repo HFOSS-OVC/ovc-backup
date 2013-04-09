@@ -168,7 +168,7 @@ class GSTStack:
         # Video decode
         video_decode = gst.element_factory_make("theoradec")
         self._in_pipeline.add(video_decode)
-        video_src.link(video_decode)
+        video_rtp_theora_depay.link(video_decode)
 
         # Change colorspace for xvimagesink
         video_colorspace = gst.element_factory_make("ffmpegcolorspace")
