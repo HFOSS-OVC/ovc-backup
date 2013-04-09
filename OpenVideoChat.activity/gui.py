@@ -23,25 +23,25 @@
 .. moduleauthor:: Caleb Coffie <CalebCoffie@gmail.com>
 """
 
-import pygtk
+import gtk
 from gettext import gettext as _
 
 from sugar.activity.activity import ActivityToolbox
 from sugar.graphics.toolbutton import ToolButton
 
 
-class Gui (pygtk.VBox):
+class Gui (gtk.VBox):
 
     def __init__(self, activity):
 
-        pygtk.VBox.__init__(self)
+        gtk.VBox.__init__(self)
 
         self.activity = activity
 
-        mov_box = pygtk.HBox()
+        mov_box = gtk.HBox()
 
         #Add movie window
-        self.movie_window = pygtk.DrawingArea()
+        self.movie_window = gtk.DrawingArea()
         self.movie_window_preview = gtk.DrawingArea()
         mov_box.pack_start(self.movie_window)
         mov_box.pack_start(self.movie_window_preview)
