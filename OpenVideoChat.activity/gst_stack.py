@@ -22,10 +22,16 @@
 .. moduleauthor:: Fran Rogers <fran@dumetella.net>
 .. moduleauthro:: Remy DeCausemaker <remyd@civx.us>
 .. moduleauthor:: Luke Macken <lmacken@redhat.com>
+.. moduleauthor:: Caleb Coffie <CalebCoffie@gmail.com>
 """
 
+#External Imports
 import gst
 
+#Internal Imports
+
+
+#Define the limitations of the device
 CAPS = "video/x-raw-yuv,width=320,height=240,framerate=15/1"
 
 
@@ -34,11 +40,13 @@ class GSTStack:
     def __init__(self, link_function):
         self._out_pipeline = None
         self._in_pipeline = None
-        self.link_funciton = link_function
 
+    
+    #Outgoing Pipeline
     def build_outgoing_pipeline(self, ip):
+        #Checks if there is outgoing pipeline already
         if self._out_pipeline != None:
-            print "WARNING: outgoing pipline exists"
+            print "WARNING: outgoing pipeline exists"
             return
 
         print "Building outgoing pipeline UDP to %s" % ip
@@ -76,11 +84,17 @@ class GSTStack:
         self._out_pipeline.add(video_enc)
         video_tee.link(video_enc)
 
-        # Add udpsink
+        #Add rtptheorapay
+        video_rtp_theora_pay = gst.element_factory_make("rtptheorapay")
+        self._out_pipeline.add(video_rtp_theora_pay)
+        video_enc.link(video_rtp_theora_pay)
+
+        #Add udpsink
         udp_sink = gst.element_factory_make("udpsink")
         udp_sink.set_property("host", ip)
         self._out_pipeline.add(udp_sink)
-        video_enc.link(udp_sink)
+        video_rtp_theora_pay.link(udp_sink)
+
 
         ## On other side of pipeline. connect tee to ximagesink
         # Queue element to receive video from tee
@@ -122,14 +136,17 @@ class GSTStack:
 
             if message.structure.get_name() == "prepare-xwindow-id":
                 # Assign the viewport
-                self.link_funciton(message.src, 'PREVIEW')
+                self.link_function(message.src, 'PREVIEW')
 
         bus.connect("message", on_message)
         bus.connect("sync-message::element", on_sync_message)
 
+    
+
+    #Incoming Pipeline
     def build_incoming_pipeline(self):
         if self._in_pipeline != None:
-            print "WARNING: incoming pipline exists"
+            print "WARNING: incoming pipeline exists"
             return
 
         # Set up the gstreamer pipeline
@@ -143,10 +160,15 @@ class GSTStack:
         video_src = gst.element_factory_make("udpsrc")
         self._in_pipeline.add(video_src)
 
+        # RTP Theora Depay
+        video_rtp_theora_depay = gst.element_factory_make("rtptheoradepay")
+        self._in_pipeline.add(video_rtp_theora_depay)
+        video_src.link(video_rtp_theora_depay)
+
         # Video decode
         video_decode = gst.element_factory_make("theoradec")
         self._in_pipeline.add(video_decode)
-        video_src.link(video_decode)
+        video_rtp_theora_depay.link(video_decode)
 
         # Change colorspace for xvimagesink
         video_colorspace = gst.element_factory_make("ffmpegcolorspace")
@@ -183,7 +205,7 @@ class GSTStack:
 
             if message.structure.get_name() == "prepare-xwindow-id":
                 # Assign the viewport
-                self.link_funciton(message.src, 'MAIN')
+                self.link_function(message.src, 'MAIN')
 
         bus.connect("message", on_message)
         bus.connect("sync-message::element", on_sync_message)
