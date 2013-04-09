@@ -52,7 +52,7 @@ class GSTStack:
         print "Building outgoing pipeline UDP to %s" % ip
 
         # Pipeline:
-        # v4l2src -> videorate -> (CAPS) -> tee -> theoraenc -> udpsink
+        # v4l2src -> videorate -> (CAPS) -> tee -> theoraenc -> rtptheorapay -> udpsink
         #                                     \
         #                     -> queue -> ffmpegcolorspace -> ximagesink
         self._out_pipeline = gst.Pipeline()
@@ -153,7 +153,7 @@ class GSTStack:
         print "Building Incoming Video Pipeline"
 
         # Pipeline:
-        # udpsrc -> theoradec -> ffmpegcolorspace -> xvimagesink
+        # udpsrc -> rtptheoradepay -> theoradec -> ffmpegcolorspace -> xvimagesink
         self._in_pipeline = gst.Pipeline()
 
         # Video Source
