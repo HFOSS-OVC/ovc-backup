@@ -29,7 +29,7 @@ from sugar.activity.activity import ActivityToolbox
 from sugar.graphics.toolbutton import ToolButton
 
 
-class Gui (gtk.VBox):
+class Gui (Gtk.VBox):
 
     def __init__(self, activity):
 
