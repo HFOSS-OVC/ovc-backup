@@ -172,9 +172,7 @@ class OpenVideoChatActivity(Activity):
                 self.gststack.build_outgoing_pipeline(args)
 
                 # FIXME
-                GObject
-    .timeout_add(5000, self.gststack.
-                                    start_stop_outgoing_pipeline)
+                GObject.timeout_add(5000, self.gststack.start_stop_outgoing_pipeline)
 
             else:
                 print args, "has sent its ip, ignoring as we are already \
