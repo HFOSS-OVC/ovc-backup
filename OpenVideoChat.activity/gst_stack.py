@@ -70,7 +70,7 @@ class GSTStack:
 
         # Add caps to limit rate and size
         video_caps = Gst.ElementFactory.make("capsfilter", None)
-        video_caps.set_property("caps", Gst.Caps(CAPS))
+        video_caps.set_property("caps", Gst.caps_from_string(CAPS))
         self._out_pipeline.add(video_caps)
         video_rate.link(video_caps)
 
@@ -105,14 +105,14 @@ class GSTStack:
         video_tee.link(video_queue)
 
         # Change colorspace for ximagesink
-        video_colorspace = Gst.ElementFactory.make("ffmpegcolorspace", None)
-        self._out_pipeline.add(video_colorspace)
-        video_queue.link(video_colorspace)
+        video_videoconvert = Gst.ElementFactory.make("videoconvert", None)
+        self._out_pipeline.add(video_videoconvert)
+        video_queue.link(video_videoconvert)
 
         # Send to ximagesink
         ximage_sink = Gst.ElementFactory.make("ximagesink", None)
         self._out_pipeline.add(ximage_sink)
-        video_colorspace.link(ximage_sink)
+        video_videoconvert.link(ximage_sink)
 
         # Connect to pipeline bus for signals.
         bus = self._out_pipeline.get_bus()
