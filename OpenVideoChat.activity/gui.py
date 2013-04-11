@@ -23,7 +23,7 @@
 .. moduleauthor:: Caleb Coffie <CalebCoffie@gmail.com>
 """
 
-import gtk
+from gi.repository import Gtk
 from gettext import gettext as _
 
 from sugar.activity.activity import ActivityToolbox
