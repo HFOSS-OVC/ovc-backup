@@ -27,7 +27,6 @@
 from gettext import gettext as _
 from sugar.activity.activity import Activity
 from sugar.graphics.alert import NotifyAlert
-from gi.repository import GObject
 
 #Local Imports
 from gui import Gui
