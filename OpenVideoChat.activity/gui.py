@@ -32,7 +32,7 @@ from gi.repository import Gtk
 class Gui (Gtk.Box(orientation=Gtk.Orientation.VERTICAL)):
     print "gui 1"
     def __init__(self, activity):
-
+        print "gui 1.5"
         Gtk.Box(orientation=Gtk.Orientation.VERTICAL).__init__(self)
         print "gui 2"
         self.activity = activity
