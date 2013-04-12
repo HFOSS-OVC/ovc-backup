@@ -117,7 +117,7 @@ class Gui (Gtk.Box(orientation=Gtk.Orientation.VERTICAL)):
                                               self.force_redraw, None)
         self.settings_bar.insert(self.settings_buttons['reload_video'], -1)
 
-        self.toolbox = ActivityToolbox(self.activity)
+        self.toolbox = ToolbarBox(self.activity)
         self.toolbox.add_toolbar(_("Settings"), self.settings_bar)
 
         self.activity.set_toolbar_box(self.toolbox)
