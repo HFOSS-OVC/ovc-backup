@@ -25,7 +25,7 @@
 
 #from gettext import gettext as _    #For Translations
 
-from sugar.activity import activity
+from sugar3.activity.activity import ActivityToolbox
 from sugar3.graphics.toolbutton import ToolButton
 
 
@@ -114,7 +114,7 @@ class Gui (Gtk.Box(orientation=Gtk.Orientation.VERTICAL)):
                                               self.force_redraw, None)
         self.settings_bar.insert(self.settings_buttons['reload_video'], -1)
 
-        self.toolbox = activity.ActivityToolbox(self)
+        self.toolbox = ActivityToolbox(self.activity)
         self.toolbox.add_toolbar(_("Settings"), self.settings_bar)
 
         self.activity.set_toolbar_box(self.toolbox)
