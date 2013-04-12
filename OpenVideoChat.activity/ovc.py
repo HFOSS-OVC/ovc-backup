@@ -29,13 +29,13 @@ from gi.repository import GObject
 
 from gettext import gettext as _
 from sugar3.activity.activity import Activity
-from sugar.graphics.alert import NotifyAlert
+from sugar3.graphics.alert import NotifyAlert
 
 #Local Imports
 from gui import Gui
 from sugar_network_stack import SugarNetworkStack
 from gst_stack import GSTStack
-from sugar import profile
+from sugar3 import profile
 
 
 class OpenVideoChatActivity(Activity):
