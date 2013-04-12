@@ -29,9 +29,10 @@ from sugar3.graphics.toolbarbox import ToolbarButton
 from gi.repository import Gtk
 
 
-class Gui (Gtk.Box(orientation=Gtk.Orientation.VERTICAL)):
+class Gui (Gtk.Box):
     print "gui 1"
     def __init__(self, activity):
+        self.set_orientation(Gtk.Orientation.VERTICAL)
         print "gui 1.5"
         Gtk.Box(orientation=Gtk.Orientation.VERTICAL).__init__(self)
         print "gui 2"
