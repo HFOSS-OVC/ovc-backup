@@ -25,9 +25,9 @@
 
 #from gettext import gettext as _    #For Translations
 print "gui 1"
-from sugar.graphics.toolbarbox import ToolbarBox
+from sugar3.graphics.toolbarbox import ToolbarBox
 print "gui 2"
-from sugar.graphics.toolbarbox import ToolbarButton
+from sugar3.graphics.toolbarbox import ToolbarButton
 print "gui 3"
 
 print "Done with gui"
