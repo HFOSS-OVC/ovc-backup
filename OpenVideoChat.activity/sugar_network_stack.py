@@ -22,10 +22,15 @@
 .. moduleauthor:: Fran Rogers <fran@dumetella.net>
 .. moduleauthro:: Remy DeCausemaker <remyd@civx.us>
 """
+print "net 1"
 import telepathy
+print "net 2"
 from sugar3.presence.tubeconn import TubeConnection
+print "net 3"
 from sugar3.presence import presenceservice
+print "net 4"
 from tube_speak import TubeSpeak
+print "net 5"
 
 print "Done with netstack"
 
