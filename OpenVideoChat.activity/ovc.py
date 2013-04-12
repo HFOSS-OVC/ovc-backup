@@ -33,8 +33,11 @@ print "Done with OVC external"
 
 #from gettext import gettext as _    #For Translations
 from sugar3.activity.activity import Activity
+print "1"
 from sugar3.graphics.alert import NotifyAlert
+print "2"
 from sugar3 import profile
+print "3"
 
 #Local Imports
 from gui import Gui
