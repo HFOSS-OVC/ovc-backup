@@ -25,8 +25,8 @@
 
 from gettext import gettext as _
 
-from sugar.activity.activity import ActivityToolbox
-from sugar.graphics.toolbutton import ToolButton
+from sugar3.activity.activity import ActivityToolbox
+from sugar3.graphics.toolbutton import ToolButton
 
 
 class Gui (Gtk.VBox):
