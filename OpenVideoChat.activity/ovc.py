@@ -23,9 +23,13 @@
 .. moduleauthor:: Luke Macken <lmacken@redhat.com>
 """
 
+print "starting ovc"
+
 #External Imports
 import gi
 from gi.repository import GObject
+
+print "Done with OVC external"
 
 #from gettext import gettext as _    #For Translations
 from sugar3.activity.activity import Activity
