@@ -24,25 +24,21 @@
 """
 
 #from gettext import gettext as _    #For Translations
-print "gui 1"
 from sugar3.graphics.toolbarbox import ToolbarBox
-print "gui 2"
 from sugar3.graphics.toolbarbox import ToolbarButton
-print "gui 3"
 from gi.repository import Gtk
 
-print "Done with gui"
 
 class Gui (Gtk.Box(orientation=Gtk.Orientation.VERTICAL)):
-
+    print "gui 1"
     def __init__(self, activity):
 
         Gtk.Box(orientation=Gtk.Orientation.VERTICAL).__init__(self)
-
+        print "gui 2"
         self.activity = activity
-
+        print "gui 3"
         mov_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, homogeneous=True, spacing=8)
-
+        print "Done with gui"
         #Add movie window
         self.movie_window = Gtk.DrawingArea()
         self.movie_window_preview = Gtk.DrawingArea()
