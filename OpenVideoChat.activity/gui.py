@@ -24,9 +24,11 @@
 """
 
 #from gettext import gettext as _    #For Translations
-
+print "gui 1"
 from sugar3.activity.activity import ActivityToolbox
+print "gui 2"
 from sugar3.graphics.toolbutton import ToolButton
+print "gui 3"
 
 print "Done with gui"
 
