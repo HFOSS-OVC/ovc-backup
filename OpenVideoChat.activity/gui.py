@@ -23,7 +23,7 @@
 .. moduleauthor:: Caleb Coffie <CalebCoffie@gmail.com>
 """
 
-from gettext import gettext as _
+#from gettext import gettext as _    #For Translations
 
 from sugar.activity.activity import ActivityToolbox
 from sugar3.graphics.toolbutton import ToolButton
