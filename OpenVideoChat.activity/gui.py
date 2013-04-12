@@ -25,7 +25,7 @@
 
 from gettext import gettext as _
 
-from sugar3.activity.activity import ActivityToolbox
+from sugar.activity.activity import ActivityToolbox
 from sugar3.graphics.toolbutton import ToolButton
 
 
