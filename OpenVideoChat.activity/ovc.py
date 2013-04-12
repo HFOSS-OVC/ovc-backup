@@ -25,8 +25,7 @@
 
 #External Imports
 import gi
-gi.require_version('Gst', '1.0')
-from gi.repository import GObject, Gst
+from gi.repository import GObject
 
 from gettext import gettext as _
 from sugar.activity.activity import Activity
