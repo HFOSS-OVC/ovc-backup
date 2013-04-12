@@ -41,8 +41,11 @@ print "3"
 
 #Local Imports
 from gui import Gui
+print "4"
 from sugar_network_stack import SugarNetworkStack
+print "5"
 from gst_stack import GSTStack
+print "6"
 
 print "Done with OVC"
 
