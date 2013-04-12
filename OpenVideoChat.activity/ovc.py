@@ -30,13 +30,14 @@ from gi.repository import GObject
 #from gettext import gettext as _    #For Translations
 from sugar3.activity.activity import Activity
 from sugar3.graphics.alert import NotifyAlert
+from sugar3 import profile
 
 #Local Imports
 from gui import Gui
 from sugar_network_stack import SugarNetworkStack
 from gst_stack import GSTStack
-from sugar3 import profile
 
+print "Done with OVC"
 
 class OpenVideoChatActivity(Activity):
 

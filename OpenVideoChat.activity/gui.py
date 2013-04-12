@@ -28,6 +28,7 @@
 from sugar3.activity.activity import ActivityToolbox
 from sugar3.graphics.toolbutton import ToolButton
 
+print "Done with gui"
 
 class Gui (Gtk.Box(orientation=Gtk.Orientation.VERTICAL)):
 
