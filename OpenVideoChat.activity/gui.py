@@ -29,6 +29,7 @@ from sugar3.graphics.toolbarbox import ToolbarBox
 print "gui 2"
 from sugar3.graphics.toolbarbox import ToolbarButton
 print "gui 3"
+from gi.repository import Gtk
 
 print "Done with gui"
 
