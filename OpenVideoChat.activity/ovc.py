@@ -28,7 +28,7 @@ import gi
 from gi.repository import GObject
 
 from gettext import gettext as _
-from sugar.activity import Activity
+from sugar.activity.activity import Activity
 from sugar.graphics.alert import NotifyAlert
 
 #Local Imports
