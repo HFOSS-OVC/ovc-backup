@@ -2,6 +2,8 @@
 #	Used to expendite the process of testing and
 #	and debugging on the XO
 
+import os
+
 os.system("git pull")
 
 os.system("sudo python setup.py build")
