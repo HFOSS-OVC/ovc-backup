@@ -221,3 +221,31 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 29, in <module>
     gi.require_version('Gst', '1.0')
 NameError: name 'gi' is not defined
+---------------
+EST  Sat Apr 13 19:51:45 2013 EST
+---------------
+starting ovc
+Done with OVC external
+1
+2
+3
+gui 1
+4
+net 1
+net 2
+net 3
+net 4
+Done with TubeSpeak
+net 5
+Done with netstack
+5
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 118, in main
+    module = __import__(module_name)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 47, in <module>
+    from gst_stack import GSTStack
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 29, in <module>
+    gi.require_version('Gst', '1.0')
+NameError: name 'gi' is not defined
