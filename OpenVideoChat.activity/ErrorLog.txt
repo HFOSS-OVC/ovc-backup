@@ -59,3 +59,7 @@ Cannot find org.laptop.OpenVideoChat bundle.
 EST  Sat Apr 13 22:41:29 2013 EST
 ---------------------------------
 Cannot find org.laptop.OpenVideoChat bundle.
+---------------------------------
+EST  Sat Apr 13 22:43:16 2013 EST
+---------------------------------
+Cannot find org.laptop.OpenVideoChat bundle.
