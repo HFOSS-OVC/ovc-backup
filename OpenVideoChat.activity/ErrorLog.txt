@@ -17,3 +17,14 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 50, in __init__
     self.isServer = not self._shared_activity
 AttributeError: 'OpenVideoChatActivity' object has no attribute '_shared_activity'
+---------------------------------
+EST  Sat Apr 13 22:22:00 2013 EST
+---------------------------------
+gui 1
+Done with TubeSpeak
+GST
+gst 1
+Done with gst_stack
+Finished Imports
+
+(sugar-activity:2270): Gtk-CRITICAL **: gtk_orientable_set_orientation: assertion `GTK_IS_ORIENTABLE (orientable)' failed
