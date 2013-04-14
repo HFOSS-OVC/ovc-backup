@@ -187,3 +187,17 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 61, in __init__
     chat_expander = Gui.gtk_expander_new(_("Chat"))
 AttributeError: type object 'Gui' has no attribute 'gtk_expander_new'
+---------------------------------
+EST  Sun Apr 14 15:24:02 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 118, in main
+    module = __import__(module_name)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 36, in <module>
+    from gui import Gui
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 33, in <module>
+    class Gui (Gtk):
+TypeError: Error when calling the metaclass bases
+    __init__() takes exactly 2 arguments (4 given)
