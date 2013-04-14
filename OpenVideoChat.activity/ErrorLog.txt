@@ -100,3 +100,6 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 651, in call_blocking
     message, timeout)
 dbus.exceptions.DBusException: org.freedesktop.DBus.Error.ServiceUnknown: The name org.laptop.Shell was not provided by any .service files
+---------------
+Sun Apr 14 00:16:09 GMT 2013
+---------------
