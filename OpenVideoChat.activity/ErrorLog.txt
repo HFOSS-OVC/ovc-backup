@@ -81,3 +81,9 @@ EST  Sat Apr 13 23:01:41 2013 EST
 ---------------------------------
 EST  Sat Apr 13 23:02:45 2013 EST
 ---------------------------------
+---------------------------------
+EST  Sat Apr 13 23:03:16 2013 EST
+---------------------------------
+Finished Imports
+
+(sugar-activity:2018): Gtk-CRITICAL **: gtk_orientable_set_orientation: assertion `GTK_IS_ORIENTABLE (orientable)' failed
