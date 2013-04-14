@@ -361,3 +361,22 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 29, in <module>
     gi.require_version('Gst', '1.0')
 NameError: name 'gi' is not defined
+---------------
+EST  Sat Apr 13 21:48:13 2013 EST
+---------------
+gui 1
+Done with TubeSpeak
+GST
+gst 1
+Done with gst_stack
+Finished Imports
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 50, in __init__
+    self.isServer = not self._shared_activity
+AttributeError: 'OpenVideoChatActivity' object has no attribute '_shared_activity'
