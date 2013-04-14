@@ -69,3 +69,9 @@ EST  Sat Apr 13 22:46:15 2013 EST
 Finished Imports
 
 (sugar-activity:1333): Gtk-CRITICAL **: gtk_orientable_set_orientation: assertion `GTK_IS_ORIENTABLE (orientable)' failed
+Finished Imports
+
+(sugar-activity:1384): Gtk-CRITICAL **: gtk_orientable_set_orientation: assertion `GTK_IS_ORIENTABLE (orientable)' failed
+---------------------------------
+EST  Sat Apr 13 22:59:50 2013 EST
+---------------------------------
