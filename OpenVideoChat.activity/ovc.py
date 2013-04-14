@@ -68,6 +68,7 @@ class OpenVideoChatActivity(Activity):
 
         # Setup Gui
         ###########
+        print "going into gui"
         self.gui = Gui(self)
         print "1"
         self.gui.show()
@@ -85,7 +86,7 @@ class OpenVideoChatActivity(Activity):
         self.gststack = GSTStack(self.gui.send_video_to_screen)
         self.gststack.build_incoming_pipeline()
         GObject.idle_add(self.gststack.start_stop_incoming_pipeline, True)
-        
+
         print "Activity Started"
 
     def can_close(self):
