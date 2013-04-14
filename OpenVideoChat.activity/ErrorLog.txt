@@ -47,3 +47,11 @@ EST  Sat Apr 13 22:30:37 2013 EST
 Finished Imports
 
 (sugar-activity:2559): Gtk-CRITICAL **: gtk_orientable_set_orientation: assertion `GTK_IS_ORIENTABLE (orientable)' failed
+---------------------------------
+EST  Sat Apr 13 22:37:55 2013 EST
+---------------------------------
+Finished Imports
+---------------------------------
+EST  Sat Apr 13 22:40:33 2013 EST
+---------------------------------
+Cannot find org.laptop.OpenVideoChat bundle.
