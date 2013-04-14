@@ -58,7 +58,7 @@ class Gui (Gtk.Box):
         ##################
 
         # Chat expander allows chat to be hidden/shown
-        chat_expander = Gtk.Expander(_("Chat"))
+        chat_expander = Gtk.Expander("Chat")
         chat_expander.set_expanded(True)
         self.pack_start(chat_expander, expand=False, fill=True, padding=0)
 
