@@ -232,3 +232,7 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
     self.__name__, name))
 AttributeError: 'gi.repository.Gtk' object has no attribute 'box'
+---------------------------------
+EST  Sun Apr 14 15:36:09 2013 EST
+---------------------------------
+Finished Imports
