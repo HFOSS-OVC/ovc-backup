@@ -69,21 +69,23 @@ class OpenVideoChatActivity(Activity):
         # Setup Gui
         ###########
         self.gui = Gui(self)
+        print "1"
         self.gui.show()
+        print "2"
         self.set_canvas(self.gui)
-
+        print "3"
         # Setup Network Stack
         #####################
         self.netstack = SugarNetworkStack(self)
         self._sh_hnd = self.connect('shared', self.netstack.shared_cb)
         self._jo_hnd = self.connect('joined', self.netstack.joined_cb)
-
+        print "4"
         # Setup Pipeline
         #################
         self.gststack = GSTStack(self.gui.send_video_to_screen)
         self.gststack.build_incoming_pipeline()
         GObject.idle_add(self.gststack.start_stop_incoming_pipeline, True)
-
+        
         print "Activity Started"
 
     def can_close(self):
