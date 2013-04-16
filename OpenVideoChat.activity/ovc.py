@@ -70,17 +70,17 @@ class OpenVideoChatActivity(Activity):
         ###########
         print "going into gui"
         self.gui = Gui(self)
-        print "1"
+        print "Showing GUI"
         self.gui.show()
-        print "2"
+        print "Preparing Canvas"
         self.set_canvas(self.gui)
-        print "3"
+        print "Starting Network Stack"
         # Setup Network Stack
         #####################
         self.netstack = SugarNetworkStack(self)
         self._sh_hnd = self.connect('shared', self.netstack.shared_cb)
         self._jo_hnd = self.connect('joined', self.netstack.joined_cb)
-        print "4"
+        print "Setting up GStreamer"
         # Setup Pipeline
         #################
         self.gststack = GSTStack(self.gui.send_video_to_screen)
