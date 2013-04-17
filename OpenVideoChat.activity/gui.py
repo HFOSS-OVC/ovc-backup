@@ -112,6 +112,7 @@ class Gui(Gtk.Box):
        #  # Add chat history and entry to expander
        #  chat_holder.pack_start(chat_history, True, True, 0)
        #  chat_holder.pack_start(chat_entry_hbox, False, True, 0)
+       return False
 
     def build_toolbar(self):
         # self.settings_bar = Gtk.Toolbar()
@@ -134,6 +135,7 @@ class Gui(Gtk.Box):
 
         # self.activity.set_toolbar_box(self.toolbox)
         # self.toolbox.show_all()
+        return False
 
     def get_history(self):
         return self.chat_text.get_text(self.chat_text.get_start_iter(),
