@@ -39,6 +39,7 @@ CAPS = "video/x-raw-yuv,width=320,height=240,framerate=15/1"
 class GSTStack:
 
     def __init__(self, link_function):
+        Gst.init(None)
         self._out_pipeline = None
         self._in_pipeline = None
 
