@@ -488,3 +488,168 @@ Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
+---------------------------------
+EST  Wed Apr 17 00:03:08 2013 EST
+---------------------------------
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 197, in on_message
+    if t == Gst.MESSAGE_EOS:
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'MESSAGE_EOS'
+1366175001.661951 ERROR root: Error saving activity object to datastore
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 905, in _prepare_close
+    self.save()
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 739, in save
+    self.write_file(file_path)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 206, in write_file
+    file.write(self.gui.get_history())
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 141, in get_history
+    return self.chat_text.get_text(self.chat_text.get_start_iter(),
+AttributeError: 'Gui' object has no attribute 'chat_text'
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
