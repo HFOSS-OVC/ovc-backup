@@ -725,3 +725,16 @@ Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
+---------------------------------
+EST  Wed Apr 17 00:14:37 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-launch", line 24, in <module>
+    from sugar.activity import activityfactory
+  File "/usr/lib/python2.7/site-packages/sugar/activity/activityfactory.py", line 34, in <module>
+    from sugar.datastore import datastore
+  File "/usr/lib/python2.7/site-packages/sugar/datastore/datastore.py", line 30, in <module>
+    import gio
+  File "/usr/lib/python2.7/site-packages/gtk-2.0/gio/__init__.py", line 28, in <module>
+    import unix
+KeyboardInterrupt
