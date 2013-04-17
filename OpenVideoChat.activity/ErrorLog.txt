@@ -704,3 +704,24 @@ Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
+---------------------------------
+EST  Wed Apr 17 00:13:58 2013 EST
+---------------------------------
+1366175669.363457 ERROR root: Error saving activity object to datastore
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 905, in _prepare_close
+    self.save()
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 739, in save
+    self.write_file(file_path)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 206, in write_file
+    file.write(self.gui.get_history())
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 141, in get_history
+    return self.chat_text.get_text(self.chat_text.get_start_iter(),
+AttributeError: 'Gui' object has no attribute 'chat_text'
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
