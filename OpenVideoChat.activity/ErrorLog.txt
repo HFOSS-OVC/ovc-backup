@@ -254,3 +254,24 @@ EST  Sun Apr 14 15:46:49 2013 EST
 Finished Imports
 
 (sugar-activity:2817): Gtk-CRITICAL **: gtk_orientable_set_orientation: assertion `GTK_IS_ORIENTABLE (orientable)' failed
+---------------------------------
+EST  Tue Apr 16 22:40:10 2013 EST
+---------------------------------
+
+(sugar-activity:2699): GStreamer-CRITICAL **: gst_element_factory_make: assertion `gst_is_initialized ()' failed
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 84, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 162, in build_incoming_pipeline
+    self._in_pipeline.add(video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: Argument 1 does not allow None as a value
