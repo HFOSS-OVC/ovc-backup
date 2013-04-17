@@ -791,3 +791,21 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 206, in build_incoming_pipeline
     video_in_bin.add(video_src)
 AttributeError: 'function' object has no attribute 'add'
+---------------------------------
+EST  Wed Apr 17 17:24:54 2013 EST
+---------------------------------
+1366237500.717620 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 206, in build_incoming_pipeline
+    video_in_bin.add(video_src)
+TypeError: unbound method add() must be called with Bin instance as first argument (got __main__.GstUDPSrc instance instead)
