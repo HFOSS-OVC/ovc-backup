@@ -20,22 +20,22 @@
 .. moduleauthor:: Justin Lewis <jlew.blackout@gmail.com>
 .. moduleauthor:: Taylor Rose <tjr1351@rit.edu>
 .. moduleauthor:: Fran Rogers <fran@dumetella.net>
-.. moduleauthro:: Remy DeCausemaker <remyd@civx.us>
+.. moduleauthor:: Remy DeCausemaker <remyd@civx.us>
+.. moduleauthor:: Casey DeLorme <cxd4280@rit.edu>
 """
+
+# External Imports
 import telepathy
-from sugar.presence.tubeconn import TubeConnection
-from sugar.presence import presenceservice
+from sugar3.presence import presenceservice
+from sugar3.presence.tubeconn import TubeConnection
+
+# Internal Imports
 from tube_speak import TubeSpeak
-
-SERVICE = "org.laptop.OpenVideoChat"
-IFACE = SERVICE
-PATH = "/org/laptop/OpenVideoChat"
-
 
 class SugarNetworkStack:
 
     def __init__(self, activity):
-        self.__activity = activity
+        self.activity = activity
         self.controlTube = None
 
     def add_buddy(self, buddy):
@@ -48,7 +48,7 @@ class SugarNetworkStack:
             nick = buddy.props.nick
         else:
             nick = '???'
-        self.__activity.net_cb('buddy_add', nick)
+        self.activity.net_cb('buddy_add', nick)
 
     def rem_buddy(self, buddy):
         """
@@ -58,7 +58,7 @@ class SugarNetworkStack:
             nick = buddy.props.nick
         else:
             nick = '???'
-        self.__activity.net_cb('buddy_rem', nick)
+        self.activity.net_cb('buddy_rem', nick)
 
     def _buddy_joined_cb(self, activity, buddy):
         """Called when a buddy joins the shared activity."""
@@ -72,7 +72,7 @@ class SugarNetworkStack:
         """
         Called when joining an existing activity
         """
-        for buddy in self.__activity.shared_activity.get_joined_buddies():
+        for buddy in self.activity.shared_activity.get_joined_buddies():
             self.add_buddy(buddy)
 
         self.watch_for_tubes()
@@ -85,28 +85,33 @@ class SugarNetworkStack:
 
         # Offer DBus Tube
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].OfferDBusTube(
-                                                        SERVICE, {})
+                tube_speak.SERVICE,
+                {})
 
     def watch_for_tubes(self):
         """
         This method sets up the listeners for new tube connections
         """
 
-        self.conn = self.__activity._shared_activity.telepathy_conn
-        self.tubes_chan = self.__activity._shared_activity.telepathy_tubes_chan
+        self.conn = self.activity._shared_activity.telepathy_conn
+        self.tubes_chan = self.activity._shared_activity.telepathy_tubes_chan
 
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].connect_to_signal(
-                                            'NewTube', self._new_tube_cb)
+                'NewTube',
+                self._new_tube_cb)
 
+        # Register handlers while supplying them in return
         self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].ListTubes(
-            reply_handler=self._list_tubes_reply_cb,
-            error_handler=self._list_tubes_error_cb)
+                reply_handler=self._list_tubes_reply_cb,
+                error_handler=self._list_tubes_error_cb)
 
         # Register budy join/leave
-        self.__activity._shared_activity.connect('buddy-joined',
-                                                self._buddy_joined_cb)
-        self.__activity._shared_activity.connect('buddy-left',
-                                                self._buddy_left_cb)
+        self.activity._shared_activity.connect(
+                'buddy-joined',
+                self._buddy_joined_cb)
+        self.activity._shared_activity.connect(
+                'buddy-left',
+                self._buddy_left_cb)
 
     def _list_tubes_reply_cb(self, tubes):
         """
@@ -116,21 +121,20 @@ class SugarNetworkStack:
             self._new_tube_cb(*tube_info)
 
     def _list_tubes_error_cb(self, e):
-        self.__activity._alert('ListTubes() failed: %s' % e)
+        self.activity._alert('ListTubes() failed: %s' % e)
 
     def _new_tube_cb(self, id, initiator, type, service, params, state):
 
-        if (type == telepathy.TUBE_TYPE_DBUS and service == SERVICE):
+        if (type == telepathy.TUBE_TYPE_DBUS and service == tube_speak.SERVICE):
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:
-                self.tubes_chan[
-                    telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
+                self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES].AcceptDBusTube(id)
 
             # Create Tube Connection
             tube_conn = TubeConnection(self.conn,
                 self.tubes_chan[telepathy.CHANNEL_TYPE_TUBES], id,
                 group_iface=self.tubes_chan[telepathy.CHANNEL_INTERFACE_GROUP])
 
-            self.controlTube = TubeSpeak(tube_conn, self.__activity.net_cb)
+            self.controlTube = TubeSpeak(tube_conn, self.activity.net_cb)
 
         #elif (type == telepathy.TUBE_TYPE_STREAM and
         #service == DIST_STREAM_SERVICE):

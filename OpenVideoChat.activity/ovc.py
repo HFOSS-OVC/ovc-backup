@@ -23,28 +23,31 @@
 .. moduleauthor:: Luke Macken <lmacken@redhat.com>
 """
 
-from gettext import gettext as _
+#External Imports
+import gi
+from gi.repository import GObject
 
-from sugar.activity.activity import Activity
-import gobject
+from gettext import gettext as _    #For Translations
+from sugar3.activity.activity import Activity
+from sugar3.graphics.alert import NotifyAlert
+from sugar3 import profile
 
-from sugar.graphics.alert import NotifyAlert
+#Local Imports
 from gui import Gui
 from sugar_network_stack import SugarNetworkStack
 from gst_stack import GSTStack
-from sugar import profile
-
+print "Finished Imports"
 
 class OpenVideoChatActivity(Activity):
 
     def __init__(self, handle):
         Activity.__init__(self, handle)
 
-        # gobject is used for timeing (will be removed when rtp is implemented)
-        gobject.threads_init()
+        # GObject is used for timeing (will be removed when rtp is implemented)
+        GObject.threads_init()
 
         # Set if they started the activity
-        self.isServer = not self._shared_activity
+        self.isServer = not self.shared_activity
 
         # Let sugar know we only want a 1 to 1 share (limit to 2 people)
         # Note this is not enforced by sugar yet :(
@@ -65,21 +68,24 @@ class OpenVideoChatActivity(Activity):
 
         # Setup Gui
         ###########
+        print "going into gui"
         self.gui = Gui(self)
+        print "Showing GUI"
         self.gui.show()
+        print "Preparing Canvas"
         self.set_canvas(self.gui)
-
+        print "Starting Network Stack"
         # Setup Network Stack
         #####################
         self.netstack = SugarNetworkStack(self)
         self._sh_hnd = self.connect('shared', self.netstack.shared_cb)
         self._jo_hnd = self.connect('joined', self.netstack.joined_cb)
-
+        print "Setting up GStreamer"
         # Setup Pipeline
         #################
         self.gststack = GSTStack(self.gui.send_video_to_screen)
         self.gststack.build_incoming_pipeline()
-        gobject.idle_add(self.gststack.start_stop_incoming_pipeline, True)
+        GObject.idle_add(self.gststack.start_stop_incoming_pipeline, True)
 
         print "Activity Started"
 
@@ -172,8 +178,7 @@ class OpenVideoChatActivity(Activity):
                 self.gststack.build_outgoing_pipeline(args)
 
                 # FIXME
-                gobject.timeout_add(5000, self.gststack.
-                                    start_stop_outgoing_pipeline)
+                GObject.timeout_add(5000, self.gststack.start_stop_outgoing_pipeline)
 
             else:
                 print args, "has sent its ip, ignoring as we are already \
