@@ -24,16 +24,14 @@
 .. moduleauthor:: Casey DeLorme <cxd4280@rit.edu>
 """
 
+
 # External Imports
 import gi
 from gi.repository import Gtk
 from gettext import gettext as _#For Translations
+from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolbarbox import ToolbarBox
 from sugar3.graphics.toolbarbox import ToolbarButton
-
-# from sugar.activity.activity import ActivityToolbox
-# from sugar.graphics.toolbutton import ToolButton
-
 
 
 class Gui(Gtk.Box):
@@ -101,14 +99,12 @@ class Gui(Gtk.Box):
         chat_holder.pack_start(chat_entry_hbox, False, True, 0)
 
         # Show gui
-        self.build_toolbars()
+        # self.build_toolbars()
         self.show_all()
+        # Toolbars temporarily broken
 
-        print "Done Creating Toolbars"
-
-        # Below causing errors, maybe requires toolbars code to finish execution?
-        #scroll to bottom
-        self.text_view.scroll_to_iter(self.chat_text.get_end_iter(), 0.1)
+        # Scroll to bottom
+        self.text_view.scroll_to_iter(self.chat_text.get_end_iter(), 0, False, 0.5, 0.5)
 
     def get_history(self):
         return self.chat_text.get_text(self.chat_text.get_start_iter(),
@@ -127,30 +123,20 @@ class Gui(Gtk.Box):
         self.settings_bar = Gtk.Toolbar()
         self.settings_buttons = {}
 
-        print "Create Tooltips Storage"
-        tips = Gtk.Tooltips()
-
-        print "Create Toolbars"
-
         # Generate array of menu items
-        self.settings_buttons['reload_video'] = Gtk.ToolButton('view-spiral')
+        self.settings_buttons['reload_video'] = ToolButton('view-spiral')
+        self.settings_buttons['reload_video'].set_tooltip(_("Reload Screen"))
+        self.settings_buttons['reload_video'].connect("clicked", self.force_redraw, None)
+        self.settings_bar.insert(self.settings_buttons['reload_video'], -1)
 
-        # self.settings_buttons['reload_video'].set_tooltip(_("Reload Screen"))
-
-        self.settings_buttons['reload_video'].connect(
-                "clicked",
-                self.force_redraw,
-                None)
-        self.settings_bar.insert(
-                self.settings_buttons['reload_video'],
-                -1)
-
-        print "Done with Reload Video"
-
+        # Create parent container for settings
         self.toolbox = ToolbarBox(self.activity)
-        self.toolbox.add_toolbar(
-                _("Settings"),
-                self.settings_bar)
+        self.toolbox.insert(self.settings_bar, -1)
+
+        # Not sure what this used to do, maybe it did the above?
+        # self.toolbox.add_toolbar(
+        #         _("Settings"),
+        #         self.settings_bar)
 
         self.activity.set_toolbar_box(self.toolbox)
         self.toolbox.show_all()
