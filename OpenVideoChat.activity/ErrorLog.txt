@@ -927,3 +927,20 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
     self.__name__, name))
 AttributeError: 'gi.repository.Gst' object has no attribute 'bin'
+---------------------------------
+EST  Wed Apr 17 19:45:07 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 118, in main
+    module = __import__(module_name)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 39, in <module>
+    from gst_stack import GSTStack
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 100, in <module>
+    class AudioOutBin(Gst.bin):
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 269, in __getattr__
+    return getattr(self._introspection_module, name)
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 115, in __getattr__
+    self.__name__, name))
+AttributeError: 'gi.repository.Gst' object has no attribute 'bin'
