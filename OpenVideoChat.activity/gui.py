@@ -48,12 +48,6 @@ class Gui(Gtk.Grid):
         # Set Activity
         self.activity = activity
 
-        # Create an accelerator group
-        accelgroup = Gtk.accel_groups_activate
-
-        # Add the accelerator group to the toplevel window
-        self.add_accel_group(accelgroup)
-
         # Add Video & Chat Containers
         self.add(self.build_videogrid())
         self.attach(self.build_chatgrid(), 0, 1, 1, 1)
