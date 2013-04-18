@@ -1626,3 +1626,15 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 181, in __init__
     audio_rtp.link(audio_enc)
 NameError: global name 'audio_enc' is not defined
+---------------------------------
+EST  Wed Apr 17 22:18:25 2013 EST
+---------------------------------
+1366255112.640400 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:310): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+1366255123.877798 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
