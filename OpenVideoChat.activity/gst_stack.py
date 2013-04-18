@@ -39,6 +39,8 @@ class VideoOutBin(Gst.Bin):
     def __init__(self):
             super(VideoOutBin, self).__init__()
             
+            print "1"
+
             # Video Source
             video_src = Gst.ElementFactory.make("autovideosrc", None)
             self.add(video_src)
@@ -205,11 +207,8 @@ class GSTStack:
         #                     -> queue -> ffmpegcolorspace -> ximagesink
         self._out_pipeline = Gst.Pipeline()
 
-        print "1"
         video_out_bin = VideoOutBin()
-        print "2"
         audio_out_bin = AudioOutBin()
-        print "3"
 
         self._out_pipeline.add(video_out_bin)
         self._out_pipeline.add(audio_out_bin)
@@ -258,11 +257,8 @@ class GSTStack:
         # udpsrc -> rtptheoradepay -> theoradec -> ffmpegcolorspace -> xvimagesink
         self._in_pipeline = Gst.Pipeline()
 
-        print "4"
         video_in_bin = VideoInBin()
-        print "5"
         audio_in_bin = AudioInBin()
-        print "6"
 
         self._in_pipeline.add(video_in_bin)
         self._in_pipeline.add(audio_in_bin)
