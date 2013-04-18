@@ -1680,3 +1680,18 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 55, in __init__
     self.add_accel_group(accelgroup)
 AttributeError: 'Gui' object has no attribute 'add_accel_group'
+---------------------------------
+EST  Wed Apr 17 22:52:16 2013 EST
+---------------------------------
+1366257143.403127 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1257): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+1366257155.994256 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+4
+5
+6
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
