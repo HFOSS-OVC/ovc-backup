@@ -106,11 +106,11 @@ class AudioOutBin(Gst.Bin):
             self.add(audio_src)
 
             # Opus Audio Encoding
-            audio_enc = Gst.ElementFactory.make("opusenc", None)
+            audio_enc = Gst.ElementFactory.make("speexenc", None)
             self.add(audio_enc)
 
             # RTP Opus Pay
-            audio_rtp = Gst.ElementFactory.make("rtpopuspay", None)
+            audio_rtp = Gst.ElementFactory.make("rtpspeexpay", None)
             self.add(audio_rtp)
 
             # Audio UDP Sink
@@ -160,26 +160,26 @@ class AudioInBin(Gst.Bin):
             super(AudioInBin, self).__init__()
             
             # Audio Source
-            self.audio_src = Gst.ElementFactory.make("udpsrc", None)
-            self.audio_src.set_property("port", 5005)
-            self.add(self.audio_src)
+            audio_src = Gst.ElementFactory.make("udpsrc", None)
+            audio_src.set_property("port", 5005)
+            self.add(audio_src)
 
             # RTP Opus Depay
-            self.audio_rtp = Gst.ElementFactory.make("rtpopusdepay", None)
-            self.add(self.audio_rtp)
+            audio_rtp = Gst.ElementFactory.make("rtpspeexdepay", None)
+            self.add(audio_rtp)
             
             # Opus Audio Decoding
-            self.audio_dec = Gst.ElementFactory.make("opusdec", None)
-            self.add(self.audio_dec)
+            audio_dec = Gst.ElementFactory.make("speexdec", None)
+            self.add(audio_dec)
             
             # Audio Sink
-            self.audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
-            self.add(self.audio_sink)
+            audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
+            self.add(audio_sink)
             
             # Link Elements
-            self.audio_src.link(self.audio_rtp)
-            self.self.audio_rtp.link(self.audio_enc)
-            self.audio_dec.link(self.audio_sink)
+            audio_src.link(audio_rtp)
+            audio_rtp.link(audio_enc)
+            audio_dec.link(audio_sink)
 
 
 class GSTStack:
