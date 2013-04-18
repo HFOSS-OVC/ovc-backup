@@ -131,7 +131,7 @@ class VideoInBin(Gst.Bin):
             # Video Source
             video_src = Gst.ElementFactory.make("udpsrc", None)
             video_src.set_property("port", 5004)
-            self.add(video_in_bin, video_src)
+            self.add(VideoInBin, video_src)
 
             # RTP Theora Depay
             video_rtp_theora_depay = Gst.ElementFactory.make("rtptheoradepay", None)
