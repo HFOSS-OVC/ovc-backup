@@ -1638,3 +1638,30 @@ Building Incoming Video Pipeline
 Setting Incoming Pipeline state: STATE_PLAYING
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
+---------------------------------
+EST  Wed Apr 17 22:40:23 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 45, in __init__
+    Activity.__init__(self, handle)
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 342, in __init__
+    self._jobject = self._initialize_journal_object()
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 395, in _initialize_journal_object
+    datastore.write(jobject)
+  File "/usr/lib/python2.7/site-packages/sugar3/datastore/datastore.py", line 385, in write
+    transfer_ownership)
+  File "/usr/lib/python2.7/site-packages/sugar3/datastore/datastore.py", line 336, in _create_ds_entry
+    transfer_ownership)
+  File "/usr/lib/python2.7/site-packages/dbus/proxies.py", line 70, in __call__
+    return self._proxy_method(*args, **keywords)
+  File "/usr/lib/python2.7/site-packages/dbus/proxies.py", line 145, in __call__
+    **keywords)
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 651, in call_blocking
+    message, timeout)
+KeyboardInterrupt
