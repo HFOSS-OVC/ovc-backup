@@ -185,7 +185,6 @@ class AudioInBin(Gst.Bin):
 class GSTStack:
 
     def __init__(self, link_function):
-        print "1"
         Gst.init(None)
         self._out_pipeline = None
         self._in_pipeline = None
