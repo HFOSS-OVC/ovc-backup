@@ -1851,3 +1851,11 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 208, in get_stream
     return RECEIVING_STREAM
 NameError: global name 'RECEIVING_STREAM' is not defined
+---------------------------------
+EST  Thu Apr 18 15:47:32 2013 EST
+---------------------------------
+
+(sugar-activity:1213): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+1366318059.627041 WARNING root: No Gtk.AccelGroup in the top level window.
+1366318096.660746 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
