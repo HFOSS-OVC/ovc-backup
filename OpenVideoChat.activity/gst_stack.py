@@ -127,8 +127,6 @@ class AudioOutBin(Gst.Bin):
 class VideoInBin(Gst.Bin):
     def __init__(self):
             super(VideoInBin, self).__init__()
-            
-            print "1"
 
             # Video Source
             video_src = Gst.ElementFactory.make("udpsrc", None)
@@ -160,8 +158,6 @@ class VideoInBin(Gst.Bin):
 class AudioInBin(Gst.Bin):
     def __init__(self):
             super(AudioInBin, self).__init__()
-            
-            print "2"
 
             # Audio Source
             audio_src = Gst.ElementFactory.make("udpsrc", None)
@@ -189,6 +185,7 @@ class AudioInBin(Gst.Bin):
 class GSTStack:
 
     def __init__(self, link_function):
+        print "1"
         Gst.init(None)
         self._out_pipeline = None
         self._in_pipeline = None
