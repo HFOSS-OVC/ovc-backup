@@ -99,7 +99,7 @@ class VideoOutBin(Gst.Bin):
 
 class AudioOutBin(Gst.Bin):
     def __init__(self):
-            super().__init__()
+            super(AudioOutBin, self).__init__()
             
             # Audio Source
             audio_src = Gst.ElementFactory.make("autoaudiosrc", None)
@@ -126,7 +126,7 @@ class AudioOutBin(Gst.Bin):
 
 class VideoInBin(Gst.Bin):
     def __init__(self):
-            Gst.Bin.__init__()
+            super().__init__()
             
             # Video Source
             video_src = Gst.ElementFactory.make("udpsrc", None)
