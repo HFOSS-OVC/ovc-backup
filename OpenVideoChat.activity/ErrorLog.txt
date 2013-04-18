@@ -1734,3 +1734,56 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 29, in <module>
     import gi
 KeyboardInterrupt
+---------------------------------
+EST  Wed Apr 17 22:58:36 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-launch", line 24, in <module>
+    from sugar.activity import activityfactory
+  File "/usr/lib/python2.7/site-packages/sugar/activity/activityfactory.py", line 32, in <module>
+    from sugar import util
+  File "/usr/lib/python2.7/site-packages/sugar/util.py", line 217, in <module>
+    AND = _(' and ')
+  File "/usr/lib/python2.7/site-packages/sugar/util.py", line 34, in <lambda>
+    _ = lambda msg: gettext.dgettext('sugar-toolkit', msg)
+  File "/usr/lib/python2.7/gettext.py", line 532, in dgettext
+    codeset=_localecodesets.get(domain))
+  File "/usr/lib/python2.7/gettext.py", line 480, in translation
+    t = _translations.setdefault(key, class_(fp))
+  File "/usr/lib/python2.7/gettext.py", line 180, in __init__
+    self._parse(fp)
+  File "/usr/lib/python2.7/gettext.py", line 317, in _parse
+    self.plural = c2py(plural)
+  File "/usr/lib/python2.7/gettext.py", line 84, in c2py
+    import token, tokenize
+  File "/usr/lib/python2.7/tokenize.py", line 102, in <module>
+    re.compile, (Token, PseudoToken, Single3, Double3))
+  File "/usr/lib/python2.7/re.py", line 190, in compile
+    return _compile(pattern, flags)
+  File "/usr/lib/python2.7/re.py", line 240, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 504, in compile
+    code = _code(p, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 489, in _code
+    _compile(code, p.data, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 101, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 142, in _compile
+    _compile(code, av, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 101, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 142, in _compile
+    _compile(code, av, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 101, in _compile
+    _compile(code, av[1], flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 142, in _compile
+    _compile(code, av, flags)
+  File "/usr/lib/python2.7/sre_compile.py", line 57, in _compile
+    _compile_charset(av, flags, code, fixup)
+  File "/usr/lib/python2.7/sre_compile.py", line 183, in _compile_charset
+    for op, av in _optimize_charset(charset, fixup):
+  File "/usr/lib/python2.7/sre_compile.py", line 253, in _optimize_charset
+    data = _mk_bitmap(charmap)
+  File "/usr/lib/python2.7/sre_compile.py", line 267, in _mk_bitmap
+    if c:
+KeyboardInterrupt
