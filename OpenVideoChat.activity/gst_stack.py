@@ -160,12 +160,12 @@ class AudioInBin(Gst.Bin):
             super(AudioInBin, self).__init__()
             
             # Audio Source
-            audio_src = Gst.ElementFactory.make("udpsrc", None)
+            audio_src = Gst.ElementFactory.make('udpsrc')
             audio_src.set_property("port", 5005)
             self.add(audio_src)
 
             # RTP Opus Depay
-            audio_rtp = Gst.ElementFactory.make("rtpopusdepay", None)
+            audio_rtp = Gst.ElementFactory.make('rtpopusdepay')
             self.add(audio_rtp)
             
             # Opus Audio Decoding
