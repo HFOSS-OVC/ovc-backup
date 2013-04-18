@@ -98,80 +98,89 @@ class VideoOutBin(Gst.Bin):
             video_convert.link(ximage_sink)
 
 class AudioOutBin(Gst.bin):
-    # Audio Source
-    audio_src = Gst.ElementFactory.make("autoaudiosrc", None)
-    self.add(audio_src)
+    def __init__(self):
+            super().__init__()
+            
+            # Audio Source
+            audio_src = Gst.ElementFactory.make("autoaudiosrc", None)
+            self.add(audio_src)
 
-    # Opus Audio Encoding
-    audio_enc = Gst.ElementFactory.make("opusenc", None)
-    self.add(audio_enc)
+            # Opus Audio Encoding
+            audio_enc = Gst.ElementFactory.make("opusenc", None)
+            self.add(audio_enc)
 
-    # RTP Opus Pay
-    audio_rtp = Gst.ElementFactory.make("rtpopuspay", None)
-    self.add(audio_rtp)
+            # RTP Opus Pay
+            audio_rtp = Gst.ElementFactory.make("rtpopuspay", None)
+            self.add(audio_rtp)
 
-    # Audio UDP Sink
-    udp_sink = Gst.ElementFactory.make("udpsink", None)
-    udp_sink.set_property("host", ip)
-    udp_sink.set_property("port", 5005)
-    self.add(udp_sink)
+            # Audio UDP Sink
+            udp_sink = Gst.ElementFactory.make("udpsink", None)
+            udp_sink.set_property("host", ip)
+            udp_sink.set_property("port", 5005)
+            self.add(udp_sink)
 
-    # Link Elements
-    audio_src.link(audio_enc)
-    audio_enc.link(audio_rtp)
-    audio_rtp.link(udp_sink)
+            # Link Elements
+            audio_src.link(audio_enc)
+            audio_enc.link(audio_rtp)
+            audio_rtp.link(udp_sink)
 
 class VideoInBin(Gst.bin):
-    # Video Source
-    video_src = Gst.ElementFactory.make("udpsrc", None)
-    video_src.set_property("port", 5004)
-    self.add(video_in_bin, video_src)
+    def __init__(self):
+            super().__init__()
+            
+            # Video Source
+            video_src = Gst.ElementFactory.make("udpsrc", None)
+            video_src.set_property("port", 5004)
+            self.add(video_in_bin, video_src)
 
-    # RTP Theora Depay
-    video_rtp_theora_depay = Gst.ElementFactory.make("rtptheoradepay", None)
-    self.add(video_rtp_theora_depay)
+            # RTP Theora Depay
+            video_rtp_theora_depay = Gst.ElementFactory.make("rtptheoradepay", None)
+            self.add(video_rtp_theora_depay)
 
-    # Video decode
-    video_decode = Gst.ElementFactory.make("theoradec", None)
-    self.add(video_decode)
-    video_rtp_theora_depay.link(video_decode)
+            # Video decode
+            video_decode = Gst.ElementFactory.make("theoradec", None)
+            self.add(video_decode)
+            video_rtp_theora_depay.link(video_decode)
 
-    # Change colorspace for xvimagesink
-    video_convert = Gst.ElementFactory.make("videoconvert", None)
-    self.add(video_convert)
+            # Change colorspace for xvimagesink
+            video_convert = Gst.ElementFactory.make("videoconvert", None)
+            self.add(video_convert)
 
-    # Send video to xviamgesink
-    xvimage_sink = Gst.ElementFactory.make("autovideosink", None)
-    xvimage_sink.set_property("force-aspect-ratio", True)
-    self.add(xvimage_sink)
-    
-    # Link Elements
-    video_src.link(video_rtp_theora_depay)
-    video_decode.link(video_convert)
-    video_convert.link(xvimage_sink)
+            # Send video to xviamgesink
+            xvimage_sink = Gst.ElementFactory.make("autovideosink", None)
+            xvimage_sink.set_property("force-aspect-ratio", True)
+            self.add(xvimage_sink)
+            
+            # Link Elements
+            video_src.link(video_rtp_theora_depay)
+            video_decode.link(video_convert)
+            video_convert.link(xvimage_sink)
 
 class AudioInBin(Gst.bin):
-    # Audio Source
-    audio_src = Gst.ElementFactory.make("udpsrc", None)
-    audio_src.set_property("port", 5005)
-    self.add(audio_in_bin, audio_src)
+    def __init__(self):
+            super().__init__()
+            
+            # Audio Source
+            audio_src = Gst.ElementFactory.make("udpsrc", None)
+            audio_src.set_property("port", 5005)
+            self.add(audio_in_bin, audio_src)
 
-    # RTP Opus Depay
-    audio_rtp = Gst.ElementFactory.make("rtpopusdepay", None)
-    self.add(audio_rtp)
-    
-    # Opus Audio Decoding
-    audio_dec = Gst.ElementFactory.make("opusdec", None)
-    self.add(audio_enc)
-    
-    # Audio Sink
-    audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
-    self.add(audio_sink)
-    
-    # Link Elements
-    audio_src.link(audio_rtp)
-    audio_rtp.link(audio_enc)
-    audio_dec.link(audio_sink)
+            # RTP Opus Depay
+            audio_rtp = Gst.ElementFactory.make("rtpopusdepay", None)
+            self.add(audio_rtp)
+            
+            # Opus Audio Decoding
+            audio_dec = Gst.ElementFactory.make("opusdec", None)
+            self.add(audio_enc)
+            
+            # Audio Sink
+            audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
+            self.add(audio_sink)
+            
+            # Link Elements
+            audio_src.link(audio_rtp)
+            audio_rtp.link(audio_enc)
+            audio_dec.link(audio_sink)
 
 
 class GSTStack:
