@@ -1851,3 +1851,62 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 208, in get_stream
     return RECEIVING_STREAM
 NameError: global name 'RECEIVING_STREAM' is not defined
+---------------------------------
+EST  Thu Apr 18 15:47:32 2013 EST
+---------------------------------
+
+(sugar-activity:1213): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+1366318059.627041 WARNING root: No Gtk.AccelGroup in the top level window.
+1366318096.660746 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
+---------------------------------
+EST  Thu Apr 18 15:49:24 2013 EST
+---------------------------------
+
+(sugar-activity:1325): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+1366318172.019104 WARNING root: No Gtk.AccelGroup in the top level window.
+1366318185.929254 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
+---------------------------------
+EST  Thu Apr 18 15:52:05 2013 EST
+---------------------------------
+
+(sugar-activity:1463): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+1366318331.408220 WARNING root: No Gtk.AccelGroup in the top level window.
+1366318348.109282 ERROR dbus.connection: Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/sugar3/presence/connectionmanager.py", line 89, in __status_changed_cb
+    self._connections_per_account[account_path].connected = False
+KeyError: dbus.ObjectPath('/org/freedesktop/Telepathy/Account/gabble/jabber/_362bc9499e76abdce0011b8fab51bfa44fa2898f3_400')
+1366318348.147876 ERROR dbus.connection: Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/sugar3/presence/connectionmanager.py", line 89, in __status_changed_cb
+    self._connections_per_account[account_path].connected = False
+KeyError: dbus.ObjectPath('/org/freedesktop/Telepathy/Account/salut/local_xmpp/account0')
+1366318434.774435 ERROR dbus.connection: Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/sugar3/presence/connectionmanager.py", line 89, in __status_changed_cb
+    self._connections_per_account[account_path].connected = False
+KeyError: dbus.ObjectPath('/org/freedesktop/Telepathy/Account/salut/local_xmpp/account0')
+1366318434.775592 ERROR dbus.connection: Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/sugar3/presence/connectionmanager.py", line 89, in __status_changed_cb
+    self._connections_per_account[account_path].connected = False
+KeyError: dbus.ObjectPath('/org/freedesktop/Telepathy/Account/salut/local_xmpp/account0')
+1366318434.776733 ERROR dbus.connection: Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/sugar3/presence/connectionmanager.py", line 89, in __status_changed_cb
+    self._connections_per_account[account_path].connected = False
+KeyError: dbus.ObjectPath('/org/freedesktop/Telepathy/Account/salut/local_xmpp/account0')
+1366318693.607400 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
