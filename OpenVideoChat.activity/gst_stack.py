@@ -178,7 +178,7 @@ class AudioInBin(Gst.Bin):
             
             # Link Elements
             audio_src.link(audio_rtp)
-            audio_rtp.link(audio_enc)
+            audio_rtp.link(audio_dec)
             audio_dec.link(audio_sink)
 
 
