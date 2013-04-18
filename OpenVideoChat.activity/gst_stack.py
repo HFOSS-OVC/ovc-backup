@@ -160,26 +160,26 @@ class AudioInBin(Gst.Bin):
             super(AudioInBin, self).__init__()
             
             # Audio Source
-            audio_src = Gst.ElementFactory.make('udpsrc', None)
-            audio_src.set_property("port", 5005)
-            self.add(audio_src)
+            self.audio_src = Gst.ElementFactory.make("udpsrc", None)
+            self.audio_src.set_property("port", 5005)
+            self.add(self.audio_src)
 
             # RTP Opus Depay
-            audio_rtp = Gst.ElementFactory.make('rtpopusdepay', None)
-            self.add(audio_rtp)
+            self.audio_rtp = Gst.ElementFactory.make("rtpopusdepay", None)
+            self.add(self.audio_rtp)
             
             # Opus Audio Decoding
-            audio_dec = Gst.ElementFactory.make("opusdec", None)
-            self.add(audio_dec)
+            self.audio_dec = Gst.ElementFactory.make("opusdec", None)
+            self.add(self.audio_dec)
             
             # Audio Sink
-            audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
-            self.add(audio_sink)
+            self.audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
+            self.add(self.audio_sink)
             
             # Link Elements
-            audio_src.link(audio_rtp)
-            audio_rtp.link(audio_enc)
-            audio_dec.link(audio_sink)
+            self.audio_src.link(self.audio_rtp)
+            self.self.audio_rtp.link(self.audio_enc)
+            self.audio_dec.link(self.audio_sink)
 
 
 class GSTStack:
