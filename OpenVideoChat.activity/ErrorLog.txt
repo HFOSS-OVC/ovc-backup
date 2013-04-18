@@ -1092,3 +1092,25 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 129, in __init__
     super().__init__()
 TypeError: super() takes at least 1 argument (0 given)
+---------------------------------
+EST  Wed Apr 17 20:41:42 2013 EST
+---------------------------------
+1366249308.547417 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1598): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 129, in __init__
+    super().__init__()
+TypeError: super() takes at least 1 argument (0 given)
