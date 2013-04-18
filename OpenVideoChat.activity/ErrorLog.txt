@@ -1580,3 +1580,27 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
     return info.invoke(*args, **kwargs)
 TypeError: Argument 1 does not allow None as a value
+---------------------------------
+EST  Wed Apr 17 22:00:49 2013 EST
+---------------------------------
+1366254057.042384 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:3274): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    audio_in_bin = AudioInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 169, in __init__
+    self.add(self.audio_rtp)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: Argument 1 does not allow None as a value
