@@ -148,7 +148,6 @@ class VideoInBin(Gst.Bin):
 
             # Send video to xviamgesink
             xvimage_sink = Gst.ElementFactory.make("autovideosink", None)
-            xvimage_sink.set_property("force-aspect-ratio", True)
             self.add(xvimage_sink)
             
             # Link Elements
