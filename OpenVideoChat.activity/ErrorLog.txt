@@ -1787,3 +1787,17 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/sre_compile.py", line 267, in _mk_bitmap
     if c:
 KeyboardInterrupt
+---------------------------------
+EST  Wed Apr 17 22:59:24 2013 EST
+---------------------------------
+1366257576.871746 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1970): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+1366257585.557606 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+1
+2
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
