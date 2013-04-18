@@ -36,64 +36,66 @@ from gi.repository import Gst
 CAPS = "video/x-raw,width=320,height=240,framerate=15/1"
 
 class VideoOutBin(Gst.Bin):
-    Gst.init(None)
-    # Video Source
-    video_src = Gst.ElementFactory.make("autovideosrc", None)
-    self.add(video_src)
+    def __init__(self):
+            super().__init__()
+            
+            # Video Source
+            video_src = Gst.ElementFactory.make("autovideosrc", None)
+            self.add(video_src)
 
-    # Video Rate element to allow setting max framerate
-    video_rate = Gst.ElementFactory.make("videorate", None)
-    self.add(video_rate)
+            # Video Rate element to allow setting max framerate
+            video_rate = Gst.ElementFactory.make("videorate", None)
+            self.add(video_rate)
 
-    # Add caps to limit rate and size
-    video_caps = Gst.ElementFactory.make("capsfilter", None)
-    video_caps.set_property("caps", Gst.caps_from_string(CAPS))
-    self.add(video_caps)
+            # Add caps to limit rate and size
+            video_caps = Gst.ElementFactory.make("capsfilter", None)
+            video_caps.set_property("caps", Gst.caps_from_string(CAPS))
+            self.add(video_caps)
 
-    #Add tee element
-    video_tee = Gst.ElementFactory.make("tee", None)
-    self.add(video_tee)
+            #Add tee element
+            video_tee = Gst.ElementFactory.make("tee", None)
+            self.add(video_tee)
 
-    # Add theora Encoder
-    video_enc = Gst.ElementFactory.make("theoraenc", None)
-    video_enc.set_property("bitrate", 50)
-    video_enc.set_property("speed-level", 2)
-    self.add(video_enc)
+            # Add theora Encoder
+            video_enc = Gst.ElementFactory.make("theoraenc", None)
+            video_enc.set_property("bitrate", 50)
+            video_enc.set_property("speed-level", 2)
+            self.add(video_enc)
 
-    #Add rtptheorapay
-    video_rtp_theora_pay = Gst.ElementFactory.make("rtptheorapay", None)
-    self.add(video_rtp_theora_pay)
-    
-    #Add udpsink
-    udp_sink = Gst.ElementFactory.make("udpsink", None)
-    udp_sink.set_property("host", ip)
-    udp_sink.set_property("port", 5004)
-    self.add(udp_sink)
-    
-    ## On other side of pipeline. connect tee to ximagesink
-    # Queue element to receive video from tee
-    video_queue = Gst.ElementFactory.make("queue", None)
-    self.add(video_queue)
-    
-    # Change colorspace for ximagesink
-    video_convert = Gst.ElementFactory.make("videoconvert", None)
-    self.add(video_convert)
-    
-    # Send to ximagesink
-    ximage_sink = Gst.ElementFactory.make("ximagesink", None)
-    self.add(ximage_sink)
-    
-    # Link Elements
-    video_src.link(video_rate)
-    video_rate.link(video_caps)
-    video_caps.link(video_tee)
-    video_tee.link(video_enc)
-    video_enc.link(video_rtp_theora_pay)
-    video_rtp_theora_pay.link(udp_sink)
-    # After tee
-    video_tee.link(video_queue)
-    video_queue.link(video_convert)
-    video_convert.link(ximage_sink)
+            #Add rtptheorapay
+            video_rtp_theora_pay = Gst.ElementFactory.make("rtptheorapay", None)
+            self.add(video_rtp_theora_pay)
+            
+            #Add udpsink
+            udp_sink = Gst.ElementFactory.make("udpsink", None)
+            udp_sink.set_property("host", ip)
+            udp_sink.set_property("port", 5004)
+            self.add(udp_sink)
+            
+            ## On other side of pipeline. connect tee to ximagesink
+            # Queue element to receive video from tee
+            video_queue = Gst.ElementFactory.make("queue", None)
+            self.add(video_queue)
+            
+            # Change colorspace for ximagesink
+            video_convert = Gst.ElementFactory.make("videoconvert", None)
+            self.add(video_convert)
+            
+            # Send to ximagesink
+            ximage_sink = Gst.ElementFactory.make("ximagesink", None)
+            self.add(ximage_sink)
+            
+            # Link Elements
+            video_src.link(video_rate)
+            video_rate.link(video_caps)
+            video_caps.link(video_tee)
+            video_tee.link(video_enc)
+            video_enc.link(video_rtp_theora_pay)
+            video_rtp_theora_pay.link(udp_sink)
+            # After tee
+            video_tee.link(video_queue)
+            video_queue.link(video_convert)
+            video_convert.link(ximage_sink)
 
 class AudioOutBin(Gst.bin):
     # Audio Source
