@@ -170,7 +170,7 @@ class AudioInBin(Gst.Bin):
             
             # Opus Audio Decoding
             audio_dec = Gst.ElementFactory.make("opusdec", None)
-            self.add(audio_enc)
+            self.add(audio_dec)
             
             # Audio Sink
             audio_sink = Gst.ElementFactory.make("autoaudiosink", None)
