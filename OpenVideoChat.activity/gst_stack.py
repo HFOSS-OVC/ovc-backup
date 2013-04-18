@@ -206,11 +206,11 @@ class GSTStack:
         #                     -> queue -> ffmpegcolorspace -> ximagesink
         self._out_pipeline = Gst.Pipeline()
 
-        VideoOutBin = VideoOutBin()
-        AudioOutBin = AudioOutBin()
+        video_out_bin = VideoOutBin()
+        audio_out_bin = AudioOutBin()
 
-        self._out_pipeline.add(VideoOutBin)
-        self._out_pipeline.add(AudioOutBin)
+        self._out_pipeline.add(video_out_bin)
+        self._out_pipeline.add(audio_out_bin)
 
         # Connect to pipeline bus for signals.
         bus = self._out_pipeline.get_bus()
@@ -256,11 +256,11 @@ class GSTStack:
         # udpsrc -> rtptheoradepay -> theoradec -> ffmpegcolorspace -> xvimagesink
         self._in_pipeline = Gst.Pipeline()
 
-        VideoInBin = VideoInBin()
-        AudioInBin = AudioInBin()
+        video_in_bin = VideoInBin()
+        audio_in_bin = AudioInBin()
 
-        self._in_pipeline.add(VideoInBin)
-        self._in_pipeline.add(AudioInBin)
+        self._in_pipeline.add(video_in_bin)
+        self._in_pipeline.add(audio_in_bin)
 
         # Connect to pipeline bus for signals.
         bus = self._in_pipeline.get_bus()
