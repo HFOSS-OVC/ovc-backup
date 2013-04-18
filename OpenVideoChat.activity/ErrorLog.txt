@@ -1826,3 +1826,28 @@ Building Incoming Video Pipeline
 Setting Incoming Pipeline state: STATE_PLAYING
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
+---------------------------------
+EST  Thu Apr 18 15:40:39 2013 EST
+---------------------------------
+
+(sugar-activity:1029): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 67, in __init__
+    self.gui = Gui(self)
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 56, in __init__
+    self.activity.set_toolbar_box(self.build_toolbar())
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 140, in build_toolbar
+    settings_toolbar = self.build_settings_toolbar()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 172, in build_settings_toolbar
+    self.toggle_video(None)
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 190, in toggle_video
+    if self.activity.get_stream() and self.settings_buttons["toggle_video"].get_icon_name() == "activity-start":
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 208, in get_stream
+    return RECEIVING_STREAM
+NameError: global name 'RECEIVING_STREAM' is not defined
