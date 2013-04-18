@@ -1859,3 +1859,11 @@ EST  Thu Apr 18 15:47:32 2013 EST
 1366318059.627041 WARNING root: No Gtk.AccelGroup in the top level window.
 1366318096.660746 WARNING root: No Gtk.AccelGroup in the top level window.
 Closing, stopping pipelines
+---------------------------------
+EST  Thu Apr 18 15:49:24 2013 EST
+---------------------------------
+
+(sugar-activity:1325): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+1366318172.019104 WARNING root: No Gtk.AccelGroup in the top level window.
+1366318185.929254 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
