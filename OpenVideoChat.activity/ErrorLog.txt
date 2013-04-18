@@ -1695,3 +1695,15 @@ Building Incoming Video Pipeline
 Setting Incoming Pipeline state: STATE_PLAYING
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
+---------------------------------
+EST  Wed Apr 17 22:55:39 2013 EST
+---------------------------------
+1366257346.511849 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1441): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+1366257356.122279 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
