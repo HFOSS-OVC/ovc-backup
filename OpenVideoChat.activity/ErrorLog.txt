@@ -1136,3 +1136,24 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 129, in __init__
     super().__init__()
 TypeError: super() takes at least 1 argument (0 given)
+---------------------------------
+EST  Wed Apr 17 20:47:32 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site.py", line 563, in <module>
+    main()
+  File "/usr/lib/python2.7/site.py", line 545, in main
+    known_paths = addusersitepackages(known_paths)
+  File "/usr/lib/python2.7/site.py", line 278, in addusersitepackages
+    user_site = getusersitepackages()
+  File "/usr/lib/python2.7/site.py", line 253, in getusersitepackages
+    user_base = getuserbase() # this will also set USER_BASE
+  File "/usr/lib/python2.7/site.py", line 243, in getuserbase
+    USER_BASE = get_config_var('userbase')
+  File "/usr/lib/python2.7/sysconfig.py", line 521, in get_config_var
+    return get_config_vars().get(name)
+  File "/usr/lib/python2.7/sysconfig.py", line 420, in get_config_vars
+    _init_posix(_CONFIG_VARS)
+  File "/usr/lib/python2.7/sysconfig.py", line 283, in _init_posix
+    _parse_makefile(makefile, vars)
+KeyboardInterrupt
