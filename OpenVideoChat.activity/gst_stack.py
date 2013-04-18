@@ -97,7 +97,7 @@ class VideoOutBin(Gst.Bin):
             video_queue.link(video_convert)
             video_convert.link(ximage_sink)
 
-class AudioOutBin(Gst.bin):
+class AudioOutBin(Gst.Bin):
     def __init__(self):
             super().__init__()
             
@@ -124,7 +124,7 @@ class AudioOutBin(Gst.bin):
             audio_enc.link(audio_rtp)
             audio_rtp.link(udp_sink)
 
-class VideoInBin(Gst.bin):
+class VideoInBin(Gst.Bin):
     def __init__(self):
             super().__init__()
             
@@ -156,7 +156,7 @@ class VideoInBin(Gst.bin):
             video_decode.link(video_convert)
             video_convert.link(xvimage_sink)
 
-class AudioInBin(Gst.bin):
+class AudioInBin(Gst.Bin):
     def __init__(self):
             super().__init__()
             
