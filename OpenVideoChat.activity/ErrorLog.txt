@@ -1273,3 +1273,192 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
     return info.invoke(*args, **kwargs)
 TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:16:25 2013 EST
+---------------------------------
+1366251392.044305 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1078): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 134, in __init__
+    self.add(self, video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:30:04 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 45, in __init__
+    Activity.__init__(self, handle)
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activity.py", line 319, in __init__
+    self._bus = ActivityService(self)
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/activityservice.py", line 59, in __init__
+    bus_name = dbus.service.BusName(service_name, bus=bus)
+  File "/usr/lib/python2.7/site-packages/dbus/service.py", line 131, in __new__
+    retval = bus.request_name(name, name_flags)
+  File "/usr/lib/python2.7/site-packages/dbus/bus.py", line 303, in request_name
+    'su', (name, flags))
+  File "/usr/lib/python2.7/site-packages/dbus/connection.py", line 651, in call_blocking
+    message, timeout)
+KeyboardInterrupt
+---------------------------------
+EST  Wed Apr 17 21:30:46 2013 EST
+---------------------------------
+1366252266.541850 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1340): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 134, in __init__
+    self.add(self, video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:31:36 2013 EST
+---------------------------------
+1366252303.124158 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1440): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 134, in __init__
+    self.add(self, video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:33:14 2013 EST
+---------------------------------
+1366252400.419799 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1592): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 134, in __init__
+    self.add(self, video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:35:09 2013 EST
+---------------------------------
+1366252515.841074 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1798): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 134, in __init__
+    self.add(self, video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:35:25 2013 EST
+---------------------------------
+1366252536.647230 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1896): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 134, in __init__
+    self.add(self, video_src)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 47, in function
+    return info.invoke(*args, **kwargs)
+TypeError: add() takes exactly 2 arguments (3 given)
+---------------------------------
+EST  Wed Apr 17 21:36:45 2013 EST
+---------------------------------
+1366252612.491854 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:2099): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    self.gststack.build_incoming_pipeline()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 259, in build_incoming_pipeline
+    video_in_bin = VideoInBin()
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 151, in __init__
+    xvimage_sink.set_property("force-aspect-ratio", True)
+TypeError: object of type `GstAutoVideoSink' does not have property `force-aspect-ratio'
