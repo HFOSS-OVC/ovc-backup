@@ -2002,3 +2002,11 @@ Traceback (most recent call last):
 KeyError: dbus.ObjectPath('/org/freedesktop/Telepathy/Account/gabble/jabber/_362bc9499e76abdce0011b8fab51bfa44fa2898f3_400')
 1366335285.624628 WARNING root: No Gtk.AccelGroup in the top level window.
 Closing, stopping pipelines
+---------------------------------
+EST  Thu Apr 18 20:35:04 2013 EST
+---------------------------------
+
+(sugar-activity:3454): Gtk-CRITICAL **: gtk_grid_attach_next_to: assertion `sibling == NULL || gtk_widget_get_parent (sibling) == (GtkWidget*)grid' failed
+1366335309.888935 WARNING root: No Gtk.AccelGroup in the top level window.
+1366335336.451678 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
