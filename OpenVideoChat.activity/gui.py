@@ -48,6 +48,9 @@ class Gui(Gtk.Grid):
         # Set Activity
         self.activity = activity
 
+        # Set Activity Title
+        self.activity.set_title(_("OpenVideoChat"))
+
         # Add Video & Chat Containers
         self.add(self.build_videogrid())
         self.attach(self.build_chatgrid(), 0, 1, 1, 1)
@@ -71,7 +74,7 @@ class Gui(Gtk.Grid):
         video_grid = Gtk.Grid()
         video_grid.set_column_spacing(6)
         video_grid.add(self.movie_window_preview)
-        video_grid.attach_next_to(self.movie_window, self.movie_window, Gtk.PositionType.RIGHT, 1, 1)
+        video_grid.attach(self.movie_window, 1, 0, 1, 1)
 
         # Add a name & apply complex CSS based theming
         provider = Gtk.CssProvider()
@@ -237,8 +240,8 @@ class Gui(Gtk.Grid):
         if self.activity.get_stream():
             self.movie_window.show()
 
-    def send_video_to_screen(self, source, screen):
-        if screen == 'MAIN':
-            source.set_xwindow_id(self.movie_window.get_property('window').get_xid())
-        elif screen == 'PREVIEW':
-            source.set_xwindow_id(self.movie_window_preview.get_property('window').get_xid())
+    def render_preview(self, source):
+        source.set_xwindow_id(self.movie_window_preview.get_property('window').get_xid())
+
+    def render_incoming(self, source):
+        source.set_xwindow_id(self.movie_window.get_property('window').get_xid())
