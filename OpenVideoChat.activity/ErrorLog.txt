@@ -2010,3 +2010,21 @@ EST  Thu Apr 18 20:35:04 2013 EST
 1366335309.888935 WARNING root: No Gtk.AccelGroup in the top level window.
 1366335336.451678 WARNING root: No Gtk.AccelGroup in the top level window.
 Closing, stopping pipelines
+---------------------------------
+EST  Thu Apr 18 20:36:17 2013 EST
+---------------------------------
+1366335383.875262 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:3680): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 85, in __init__
+    GObject.idle_add(self.gststack.start_stop_incoming_pipeline, True)
+NameError: global name 'GObject' is not defined
