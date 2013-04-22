@@ -2132,3 +2132,16 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 54, in __init__
     GObject.threads_init()
 NameError: global name 'GObject' is not defined
+---------------------------------
+EST  Mon Apr 22 18:30:25 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 54, in __init__
+    GObject.threads_init()
+NameError: global name 'GObject' is not defined
