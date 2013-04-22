@@ -2082,3 +2082,40 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 82, in __init__
     GObject.idle_add(self.gststack.start_stop_incoming_pipeline, True)
 NameError: global name 'GObject' is not defined
+---------------------------------
+EST  Mon Apr 22 18:27:51 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 118, in main
+    module = __import__(module_name)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 34, in <module>
+    from sugar3.graphics.alert import NotifyAlert
+  File "/usr/lib/python2.7/site-packages/sugar3/graphics/alert.py", line 50, in <module>
+    from gi.repository import Gtk
+  File "/usr/lib/python2.7/site-packages/gi/importer.py", line 76, in load_module
+    dynamic_module._load()
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 244, in _load
+    overrides_modules = __import__('gi.overrides', fromlist=[self._namespace])
+  File "/usr/lib/python2.7/site-packages/gi/overrides/Gtk.py", line 533, in <module>
+    class FileChooserDialog(Gtk.FileChooserDialog):
+  File "/usr/lib/python2.7/site-packages/gi/module.py", line 193, in __getattr__
+    wrapper = metaclass(name, bases, dict_)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 243, in mro
+    return mro(cls)
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 257, in mro
+    bases_of_subclasses += list(map(mro, C.__bases__)) + [list(C.__bases__)]
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 257, in mro
+    bases_of_subclasses += list(map(mro, C.__bases__)) + [list(C.__bases__)]
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 257, in mro
+    bases_of_subclasses += list(map(mro, C.__bases__)) + [list(C.__bases__)]
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 257, in mro
+    bases_of_subclasses += list(map(mro, C.__bases__)) + [list(C.__bases__)]
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 257, in mro
+    bases_of_subclasses += list(map(mro, C.__bases__)) + [list(C.__bases__)]
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 257, in mro
+    bases_of_subclasses += list(map(mro, C.__bases__)) + [list(C.__bases__)]
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 246, in mro
+    def mro(C):
+KeyboardInterrupt
