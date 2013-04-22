@@ -2145,3 +2145,15 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 54, in __init__
     GObject.threads_init()
 NameError: global name 'GObject' is not defined
+---------------------------------
+EST  Mon Apr 22 18:36:06 2013 EST
+---------------------------------
+1366673773.022459 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1500): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+1366673792.703175 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
