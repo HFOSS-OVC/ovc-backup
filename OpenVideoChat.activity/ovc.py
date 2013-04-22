@@ -33,6 +33,7 @@ from sugar3 import profile
 from gettext import gettext as _
 from sugar3.graphics.alert import NotifyAlert
 from sugar3.activity.activity import Activity
+from gi.repository import GObject
 
 
 #Local Imports
@@ -49,9 +50,6 @@ class OpenVideoChatActivity(Activity):
 
     def __init__(self, handle):
         Activity.__init__(self, handle)
-
-        # gobject is used for timeing (will be removed when rtp is implemented)
-        GObject.threads_init()
 
         # Self-Enforced max_participants
         self.max_participants = 2
