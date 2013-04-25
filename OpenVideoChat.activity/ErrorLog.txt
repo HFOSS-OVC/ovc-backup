@@ -2272,3 +2272,45 @@ Traceback (most recent call last):
   File "/home/olpc/Activities/OpenVideoChat.activity/gst_bins.py", line 80, in __init__
     udp_sink.set_property("host", self.ip)
 AttributeError: 'AudioOutBin' object has no attribute 'ip'
+---------------------------------
+EST  Thu Apr 25 18:52:53 2013 EST
+---------------------------------
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 118, in main
+    module = __import__(module_name)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 40, in <module>
+    from gui import Gui
+  File "/home/olpc/Activities/OpenVideoChat.activity/gui.py", line 32, in <module>
+    from sugar3.activity.widgets import StopButton
+  File "/usr/lib/python2.7/site-packages/sugar3/activity/widgets.py", line 30, in <module>
+    from sugar3.graphics.toolbox import Toolbox
+  File "/usr/lib/python2.7/site-packages/sugar3/graphics/toolbox.py", line 28, in <module>
+    class Toolbox(Gtk.VBox):
+  File "/usr/lib/python2.7/site-packages/gi/types.py", line 220, in __init__
+    super(GObjectMeta, cls).__init__(name, bases, dict_)
+  File "/usr/lib/python2.7/site-packages/gi/_gobject/__init__.py", line 227, in __init__
+    cls._type_register(cls.__dict__)
+  File "/usr/lib/python2.7/site-packages/gi/_gobject/__init__.py", line 279, in _type_register
+    type_register(cls, namespace.get('__gtype_name__'))
+KeyboardInterrupt
+---------------------------------
+EST  Thu Apr 25 18:54:03 2013 EST
+---------------------------------
+1366934050.960746 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1923): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Traceback (most recent call last):
+  File "/usr/bin/sugar-activity", line 160, in <module>
+    main()
+  File "/usr/bin/sugar-activity", line 155, in main
+    instance = create_activity_instance(activity_constructor, activity_handle)
+  File "/usr/bin/sugar-activity", line 42, in create_activity_instance
+    activity = constructor(handle)
+  File "/home/olpc/Activities/OpenVideoChat.activity/ovc.py", line 81, in __init__
+    self.gststack = GSTStack(self.get_canvas().render_preview, self.get_canvas().render_incoming)
+  File "/home/olpc/Activities/OpenVideoChat.activity/gst_stack.py", line 51, in __init__
+    self._audio_out_bin = AudioOutBin()
+TypeError: __init__() takes exactly 2 arguments (1 given)
