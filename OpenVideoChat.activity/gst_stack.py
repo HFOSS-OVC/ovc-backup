@@ -29,7 +29,7 @@
 import gi
 gi.require_version('Gst', '1.0')
 from gi.repository import Gst
-from gst_bin import VideoOutBin, AudioOutBin, VideoInBin, AudioInBin
+from gst_bins import VideoOutBin, AudioOutBin, VideoInBin, AudioInBin
 
 # Internal Imports
 
