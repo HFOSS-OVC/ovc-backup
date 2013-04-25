@@ -55,7 +55,7 @@ class VideoOutBin(Gst.Bin):
         video_enc.link(video_rtp_theora_pay)
         video_rtp_theora_pay.link(udp_sink)
 
-    def set_ip(ip)
+    def set_ip(ip):
         self.ip = ip
 
 
@@ -91,7 +91,7 @@ class AudioOutBin(Gst.Bin):
         audio_enc.link(audio_rtp)
         audio_rtp.link(udp_sink)
     
-    def set_ip(ip)
+    def set_ip(ip):
         self.ip = ip
 
 
