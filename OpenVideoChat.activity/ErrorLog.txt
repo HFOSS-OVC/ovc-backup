@@ -2336,3 +2336,19 @@ EST  Thu Apr 25 18:59:04 2013 EST
 1366934352.379272 WARNING root: No Gtk.AccelGroup in the top level window.
 
 (sugar-activity:2247): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+---------------------------------
+EST  Sun Apr 28 22:18:44 2013 EST
+---------------------------------
+1367205528.868283 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:1229): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+1367205544.146148 WARNING root: No Gtk.AccelGroup in the top level window.
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
+Setting Outgoing Pipeline state: STATE_NULL
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
+Setting Outgoing Pipeline state: STATE_NULL
