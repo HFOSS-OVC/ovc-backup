@@ -2352,3 +2352,22 @@ Setting Outgoing Pipeline state: STATE_NULL
 Closing, stopping pipelines
 Setting Incoming Pipeline state: STATE_NULL
 Setting Outgoing Pipeline state: STATE_NULL
+---------------------------------
+EST  Sun Apr 28 22:28:12 2013 EST
+---------------------------------
+1367206098.790043 WARNING root: No Gtk.AccelGroup in the top level window.
+
+(sugar-activity:972): GStreamer-WARNING **: Element factory metadata for 'bin' has no valid long-name field
+Setting up GStreamer
+Building Incoming Video Pipeline
+Setting Incoming Pipeline state: STATE_PLAYING
+Traceback (most recent call last):
+  File "/home/olpc/Activities/OpenVideoChat.activity/network_stack.py", line 87, in shared_cb
+    self.watch_for_tubes()
+  File "/home/olpc/Activities/OpenVideoChat.activity/network_stack.py", line 99, in watch_for_tubes
+    self.conn = self.activity._shared_activity.telepathy_conn
+AttributeError: 'OpenVideoChatActivity' object has no attribute '_shared_activity'
+1367206148.910089 WARNING root: No Gtk.AccelGroup in the top level window.
+Closing, stopping pipelines
+Setting Incoming Pipeline state: STATE_NULL
+Setting Outgoing Pipeline state: STATE_NULL
